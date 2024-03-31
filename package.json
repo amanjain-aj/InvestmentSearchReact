@@ -1,0 +1,71 @@
+{
+  "name": "investmentsearch",
+  "version": "0.1.0",
+  "author": {
+    "name": "Aman"
+  },
+  "homepage": ".",
+  "private": true,
+  "dependencies": {
+    "@testing-library/jest-dom": "^5.17.0",
+    "@testing-library/react": "^13.4.0",
+    "@testing-library/user-event": "^13.5.0",
+    "axios": "^0.23.0",
+    "moment": "^2.29.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^5.2.0",
+    "react-scripts": "^5.0.1",
+    "sweetalert": "^2.1.2",
+    "web-vitals": "^2.1.4"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "jest": "react-scripts test --detectOpenHandles",
+    "test": "react-scripts test --detectOpenHandles --reporters=./custom-reporter.js",
+    "test:cov": "npm test -- --coverage --watchAll=false",
+    "test:debug": "react-scripts --inspect-brk test --runInBand",
+    "eject": "react-scripts eject",
+    "changelog": "auto-changelog --starting-version 3.0.0 --commit-limit false --hide-credit"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "jest": {
+      "collectCoverageFrom": [
+        "src/**/*.{js,jsx}",
+        "!**/*index.js",
+        "!src/serviceWorker.js",
+        "!src/polyfill.js"
+      ]
+  },
+  "devDependencies": {
+    "@babel/core": "^7.13.14",
+    "@types/react-router-dom": "^5.3.3",
+    "auto-changelog": "~2.2.1",
+    "jest": "^27.5.1",
+    "testing-library-table-queries": "^0.1.2",
+    "write": "^2.0.0",
+    "xmlbuilder": "^15.1.1"
+  },
+  "engines": {
+    "node": ">=10",
+    "npm": ">=6"
+  }
+}
