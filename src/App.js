@@ -1,4 +1,5 @@
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import SignInSide from "./components/login.js";
 
 
 function App() {
@@ -6,7 +7,7 @@ function App() {
     <Router>
       <div className="App">
         <Switch>
-          {/* <Route exact path="/" component={Homepage} /> */}
+          <Route exact path="/" component={SignInSide} />
         </Switch>
       </div>
     </Router>
