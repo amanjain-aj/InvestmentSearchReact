@@ -83,7 +83,7 @@ export default function SignInSide() {
             <Image src={logo} width={150} height={100} fit='contain'/>
            
             <Typography component="h1" variant="h5" align='left'>
-              Sign in
+              Sign In
             </Typography>
             <Typography component="p">
              Welcome back! Please enter email id and password
