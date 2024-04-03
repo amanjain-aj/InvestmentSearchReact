@@ -27,12 +27,13 @@ import Icon1 from "../assets/Group_3.png";
 import Icon2 from "../assets/Group 33 (4).png";
 import Icon3 from "../assets/Group 33 (5).png";
 import Icon4 from "../assets/Group 33 (6).png";
+import Rating from "@mui/material/Rating";
 
 export default function DashboardPage() {
 
 const defaultTheme = createTheme(
     { 
-        shadows: ["none"] ,
+        shadows: ["1"] ,
         palette: {
             // primary: {
             //   main: '#FF5733',
@@ -55,7 +56,7 @@ const defaultTheme = createTheme(
           },
     }
     ); 
-
+    const [value, setValue] = React.useState(2);
     const StyledTableCell = styled(TableCell)(({ theme }) => ({
         [`&.${tableCellClasses.head}`]: {
           backgroundColor: "#fff",
@@ -107,7 +108,8 @@ const defaultTheme = createTheme(
     <Grid container spacing={2} sx={{
          backgroundColor: '#f6f8fc',
          paddingLeft: 4,
-         paddingRight: 4
+         paddingRight: 4,
+         paddingBottom: 4
     }}>
         <Grid item xs={12} md={12}>
             
@@ -145,8 +147,10 @@ const defaultTheme = createTheme(
              </Stack>
         </Stack>
         </Grid>
-        <Grid item xs={12} md={12} mt={1}>
-            <Stack direction="row" spacing={2} sx={{justifyContent: "space-between"}}>
+        
+        <Grid item xs={12} md={12} mt={1} >
+           <Box>
+            <Stack direction="row" spacing={2} style={{justifyContent: "space-between"}}>
                 <Card sx={{width: "275px"}}>
                     <CardContent>
                     <Grid container justify='space-between' spacing={2}>
@@ -248,11 +252,15 @@ const defaultTheme = createTheme(
                     </CardContent>
                 </Card>
             </Stack>
+            </Box>
         </Grid>
-        <Grid item xs={6} md={8}>
-            <Card>
-                <CardContent>
-                    <Stack direction="row" spacing={2}>
+        
+        <Grid item xs={6} md={8} >
+          
+           <Grid item >
+            <Card sx={{marginBottom: "20px"}}>
+                <CardContent >
+                    <Stack direction="row" spacing={2} sx={{display: "flex",justifyContent: "space-between"}}>
                         <Box sx={{
                            background: "#EFF4FF",
                            padding: "20px",
@@ -332,9 +340,88 @@ const defaultTheme = createTheme(
                     </Stack>
                 </CardContent>
             </Card>
-            <Card>
-
+            </Grid>
+            <Grid item>
+            <Card sx={{padding: "10px"}}>
+              <CardContent >
+              <Grid container  spacing={12} sx={{display:"flex",justifyContent: "space-between"}}>
+                <Grid item  xs={4} md={2}>
+                <Stack direction="column" spacing={1}>
+                <Typography variant='h6'>
+                     Finstar
+                </Typography>
+                 <Rating name="read-only" value={value} readOnly />
+                 <Typography variant="subtitle2">
+                     <span style={{fontWeight: "700"}}>3.8 </span><span style={{fontWeight: "200"}}>(90)</span>
+                </Typography>
+                </Stack>
+                </Grid>
+                <Grid item xs={4} md={8} >
+                  <Grid item  sx={{marginBottom: "10px"}}>
+                  <Stack direction="row" spacing={2}>
+                  <Box component="section" sx={{ p: 1, border: '1px solid #D9D9D9', borderRadius: "5px",display:"flex" }} >
+                  <div style={{position: "relative", top: -25, right: 0}}>
+                    <Chip label="Stable" color='success' sx={{borderRadius: "4px", color: "#fff"}}/>
+                  </div>
+                    <Stack sx={{display: "flex",alignItems: "center", justifyContent: "space-between"}} direction="row" spacing={4}>
+                    <Typography variant="subtitle2" display="block">
+                        Ownership
+                    </Typography>
+                     <Box sx={{display: "flex",alignItems: "center"}}>
+                      <Rating name="read-only"  size="small" value={1} readOnly max={1}/><span style={{fontWeight: "400", fontSize: "14px"}}>3.8 </span><span style={{fontWeight: "200",fontSize: "14px"}}>(90)</span>
+                    </Box>
+                    </Stack>
+                  </Box>
+                  <Box component="section" sx={{ p: 1, border: '1px solid #D9D9D9', borderRadius: "5px",display:"flex" }} >
+                  <div style={{position: "relative", top: -25, right: 0}}>
+                    <Chip label="Stable" color='success' sx={{borderRadius: "4px", color: "#fff"}}/>
+                  </div>
+                    <Stack sx={{display: "flex",alignItems: "center", justifyContent: "space-between"}} direction="row" spacing={4}>
+                    <Typography variant="subtitle2" display="block">
+                        Ownership
+                    </Typography>
+                     <Box sx={{display: "flex",alignItems: "center"}}>
+                      <Rating name="read-only"  size="small" value={1} readOnly max={1}/><span style={{fontWeight: "400", fontSize: "14px"}}>3.8 </span><span style={{fontWeight: "200",fontSize: "14px"}}>(90)</span>
+                    </Box>
+                    </Stack>
+                  </Box>
+                  </Stack>
+                  </Grid>
+                  <Grid item>
+                  <Stack direction="row" spacing={2}>
+                  <Box component="section" sx={{ p: 1, border: '1px solid #D9D9D9', borderRadius: "5px",display:"flex" }} >
+                  <div style={{position: "relative", top: -25, right: 0}}>
+                    <Chip label="Stable" color='success' sx={{borderRadius: "4px", color: "#fff"}}/>
+                  </div>
+                    <Stack sx={{display: "flex",alignItems: "center", justifyContent: "space-between"}} direction="row" spacing={4}>
+                    <Typography variant="subtitle2" display="block">
+                        Ownership
+                    </Typography>
+                     <Box sx={{display: "flex",alignItems: "center"}}>
+                      <Rating name="read-only"  size="small" value={1} readOnly max={1}/><span style={{fontWeight: "400", fontSize: "14px"}}>3.8 </span><span style={{fontWeight: "200",fontSize: "14px"}}>(90)</span>
+                    </Box>
+                    </Stack>
+                  </Box>
+                  <Box component="section" sx={{ p: 1, border: '1px solid #D9D9D9', borderRadius: "5px",display:"flex" }} >
+                  <div style={{position: "relative", top: -25, right: 0}}>
+                    <Chip label="Stable" color='success' sx={{borderRadius: "4px", color: "#fff"}}/>
+                  </div>
+                    <Stack sx={{display: "flex",alignItems: "center", justifyContent: "space-between"}} direction="row" spacing={4}>
+                    <Typography variant="subtitle2" display="block">
+                        Ownership
+                    </Typography>
+                     <Box sx={{display: "flex",alignItems: "center"}}>
+                      <Rating name="read-only"  size="small" value={1} readOnly max={1}/><span style={{fontWeight: "400", fontSize: "14px"}}>3.8 </span><span style={{fontWeight: "200",fontSize: "14px"}}>(90)</span>
+                    </Box>
+                    </Stack>
+                  </Box>
+                  </Stack>
+                  </Grid>
+                  </Grid>
+                </Grid>
+                </CardContent>
             </Card>
+            </Grid>
         </Grid>
         <Grid item xs={6} md={4}>
         <TableContainer component={Paper}>
