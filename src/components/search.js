@@ -20,12 +20,13 @@ import InputAdornment from '@mui/material/InputAdornment';
 import SearchIcon from '@mui/icons-material/Search';
 import Avatar from '@mui/material/Avatar';
 import Avt1 from "../assets/535609blob 1.png";
+import {SearchInput} from "../components/Common";
 
 
 export default function SearchPage() {
 
 const defaultTheme = createTheme({ shadows: ["none"] }); 
-
+const [name, setName] = React.useState("");
 
 
 const top100Films = [
@@ -205,68 +206,11 @@ const top100Films = [
                     width: 800,
                     marginTop: 10
                 }}>
-                <Autocomplete
-                    freeSolo
-                    id="free-solo-2-demo"
-                    disableClearable
-                    options={top100Films.map((option) => option)}
-                    renderOption={(props, option) => {
-                        return (
-                        <Box sx={{
-                            padding: "10px",
-                        }}>
-                          <li {...props}
-                             style={{
-                                borderBottom: "1px solid #eee",
-                                display: "flex",
-                                flexDirection: "row",
-                                justifyContent: "space-between"
-                              }}
-                          >
-                             <Typography component="p">
-                               {option.title}
-                             </Typography>
-                             <Typography component="p" sx={{
-                                background: "#0078FF",
-                                color: "#fff",
-                                padding: "5px",
-                                textTransform: "uppercase"
-                             }}>
-                               {option.year}
-                                </Typography>
-                           
-                          </li>
-                          </Box>
-                        );
-                      }}
-                    renderInput={(params) => (
-                    <TextField
-                        {...params}
-                        label="Search for stocks"
-                        InputProps={{
-                        ...params.InputProps,
-                        type: 'search',
-                        style: {
-                            borderRadius: "50px",
-                            boxShadow: "0px 0px 53px 2px #4149B233",
-                            background: "#ffffff"
-                        },
-                        startAdornment: (
-                            <InputAdornment position="start">
-                              <SearchIcon sx={{
-                                backgroundColor: "#0078FF",
-                                padding: "5px",
-                                borderRadius: "50px",
-                                color: "#ffffff",
-                                fontSize: "30px"
-                              }}/>
-                            </InputAdornment>
-                          ),
-                        }}
-                    />
-                    )}
+                <SearchInput 
+                  renderData={top100Films}
+                  Value={name}
+                  onChangeText={name => setName(name)}
                 />
-                
                 </Stack>
                 <Stack
                     spacing={2} sx=
@@ -312,7 +256,7 @@ const top100Films = [
                     >
                     <Image src={Avt1} width={70} height={70} fit='contain'/>
                     </Avatar>
-                    </Stack>
+                </Stack>
                         
           </Box>
         </Grid>

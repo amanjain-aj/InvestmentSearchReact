@@ -28,6 +28,9 @@ import Icon2 from "../assets/Group 33 (4).png";
 import Icon3 from "../assets/Group 33 (5).png";
 import Icon4 from "../assets/Group 33 (6).png";
 import Rating from "@mui/material/Rating";
+import {MetricCard} from "../components/Common";
+import {SwotAnalysis} from "../components/Common";
+import {RatingCard} from "../components/Common";
 
 export default function DashboardPage() {
 
@@ -80,6 +83,64 @@ const defaultTheme = createTheme(
     function createData(metrics, values) {
         return { metrics, values };
     }
+
+    const metricData = [
+      {
+        kpiMetric: "Today's High",
+        kpiValue: " 144.65",
+        icon: `${Icon1}`
+      },
+      {
+        kpiMetric: "Today's High",
+        kpiValue: "161.5",
+        icon:`${Icon2}`
+      },
+      {
+        kpiMetric: "Today's High",
+        kpiValue: "161.5",
+        icon: `${Icon3}`
+      },
+      {
+        kpiMetric: "Today's High",
+        kpiValue: "161.5",
+        icon: `${Icon4}`
+      }
+      
+    ]
+
+    const swotDataItems = [
+      {
+        number: "8",
+        title: "Strengths",
+        value: "Strong Annual EPS Growth"
+      },
+      {
+        number: "8",
+        title: "Weaknesses",
+        value: "Strong Annual EPS Growth"
+      },
+      {
+        number: "8",
+        title: "Opportunites",
+        value: "Strong Annual EPS Growth"
+      },
+      {
+        number: "8",
+        title: "Growth",
+        value: "Strong Annual EPS Growth"
+      }
+    ]
+
+    const RatingDataItems = [
+      {
+        provider: "Finstar",
+        overall_rating :"20",
+        ownership_reviews_count : "3.0",
+        valuation_reviews_count : "2.5",
+        efficiency_reviews_count : "1.5",
+        financials_reviews_count : "3.0"
+      }
+    ]
 
     const rows = [
         createData('MARKET CAP', 17908027),
@@ -151,106 +212,16 @@ const defaultTheme = createTheme(
         <Grid item xs={12} md={12} mt={1} >
            <Box>
             <Stack direction="row" spacing={2} style={{justifyContent: "space-between"}}>
-                <Card sx={{width: "275px"}}>
-                    <CardContent>
-                    <Grid container justify='space-between' spacing={2}>
-                    <Grid item >
-                    <Avatar
-                        alt=""
-                        sx={{ width: 60, height: 60, bgcolor: '#fff' }}
-                    >
-                    <Image src={Icon1} width={70} height={70} fit='contain'/>
-                    </Avatar>
-                    </Grid>
-                    <Grid item>
-                    <Typography
-                        gutterBottom
-                        variant='body2'
-                    >
-                        Today’s High
-                    </Typography>
-                    <Typography variant='h6'>
-                     144.65
-                    </Typography>
-                    </Grid>
-                    </Grid>
-                    </CardContent>
-                </Card>
-                <Card sx={{width: "275px"}}>
-                    <CardContent>
-                    <Grid container justify='space-between' spacing={2}>
-                    <Grid item >
-                    <Avatar
-                        alt=""
-                        sx={{ width: 60, height: 60, bgcolor: '#fff' }}
-                    >
-                    <Image src={Icon2} width={70} height={70} fit='contain'/>
-                    </Avatar>
-                    </Grid>
-                    <Grid item>
-                    <Typography
-                        gutterBottom
-                        variant='body2'
-                    >
-                        Today’s High
-                    </Typography>
-                    <Typography variant='h6'>
-                     144.65
-                    </Typography>
-                    </Grid>
-                    </Grid>
-                    </CardContent>
-                </Card>
-                <Card sx={{width: "275px"}}>
-                    <CardContent>
-                    <Grid container justify='space-between' spacing={2}>
-                    <Grid item >
-                    <Avatar
-                        alt=""
-                        sx={{ width: 60, height: 60, bgcolor: '#fff' }}
-                    >
-                    <Image src={Icon3} width={70} height={70} fit='contain'/>
-                    </Avatar>
-                    </Grid>
-                    <Grid item>
-                    <Typography
-                        gutterBottom
-                        variant='body2'
-                    >
-                        Today’s High
-                    </Typography>
-                    <Typography variant='h6'>
-                     144.65
-                    </Typography>
-                    </Grid>
-                    </Grid>
-                    </CardContent>
-                </Card>
-                <Card sx={{width: "275px"}}>
-                    <CardContent>
-                    <Grid container justify='space-between' spacing={2}>
-                    <Grid item >
-                    <Avatar
-                        alt=""
-                        sx={{ width: 60, height: 60, bgcolor: '#fff' }}
-                    >
-                    <Image src={Icon4} width={70} height={70} fit='contain'/>
-                    </Avatar>
-                    </Grid>
-                    <Grid item>
-                    <Typography
-                        gutterBottom
-                        variant='body2'
-                    >
-                        Today’s High
-                    </Typography>
-                    <Typography variant='h6'>
-                     144.65
-                    </Typography>
-                    </Grid>
-                    </Grid>
-                    </CardContent>
-                </Card>
+              {
+                metricData.map((item)=>{
+                  return (
+                    <MetricCard 
+                    metricValue={item}
+                  />
+                  )
+                
+                })
+              }
             </Stack>
             </Box>
         </Grid>
@@ -258,169 +229,33 @@ const defaultTheme = createTheme(
         <Grid item xs={6} md={8} >
           
            <Grid item >
-            <Card sx={{marginBottom: "20px"}}>
+           <Card sx={{marginBottom: "20px"}}>
                 <CardContent >
-                    <Stack direction="row" spacing={2} sx={{display: "flex",justifyContent: "space-between"}}>
-                        <Box sx={{
-                           background: "#EFF4FF",
-                           padding: "20px",
-                           borderRadius: "10px",
-                           width: "130px"
-                        }}>
-                        <Avatar
-                        alt=""
-                        sx={{ width: 60, height: 60, bgcolor: '#fff', color:"#000", marginBottom: "15px" }}
-                        >
-                        8
-                        </Avatar>
-                        <Typography variant="subtitle2" display="block">
-                        Strengths
-                        </Typography>
-                        <Typography variant="caption" display="block">
-                        Strong Annual EPS Growth
-                        </Typography>
-                        </Box>
-                        <Box sx={{
-                           background: "#EFF4FF",
-                           padding: "20px",
-                           borderRadius: "10px",
-                           width: "130px"
-                        }}>
-                        <Avatar
-                        alt=""
-                        sx={{ width: 60, height: 60, bgcolor: '#fff', color:"#000", marginBottom: "15px" }}
-                        >
-                        8
-                        </Avatar>
-                        <Typography variant="subtitle2" display="block">
-                        Strengths
-                        </Typography>
-                        <Typography variant="caption" display="block">
-                        Strong Annual EPS Growth
-                        </Typography>
-                        </Box>
-                        <Box sx={{
-                           background: "#EFF4FF",
-                           padding: "20px",
-                           borderRadius: "10px",
-                           width: "130px"
-                        }}>
-                        <Avatar
-                        alt=""
-                        sx={{ width: 60, height: 60, bgcolor: '#fff', color:"#000", marginBottom: "15px" }}
-                        >
-                        8
-                        </Avatar>
-                        <Typography variant="subtitle2" display="block">
-                        Strengths
-                        </Typography>
-                        <Typography variant="caption" display="block">
-                        Strong Annual EPS Growth
-                        </Typography>
-                        </Box>
-                        <Box sx={{
-                           background: "#EFF4FF",
-                           padding: "20px",
-                           borderRadius: "10px",
-                           width: "130px"
-                        }}>
-                        <Avatar
-                        alt=""
-                        sx={{ width: 60, height: 60, bgcolor: '#fff', color:"#000", marginBottom: "15px" }}
-                        >
-                        8
-                        </Avatar>
-                        <Typography variant="subtitle2" display="block">
-                        Strengths
-                        </Typography>
-                        <Typography variant="caption" display="block">
-                        Strong Annual EPS Growth
-                        </Typography>
-                        </Box>
-                    </Stack>
-                </CardContent>
+                <Stack direction="row" spacing={2} sx={{display: "flex",justifyContent: "space-between"}}>
+                {
+                swotDataItems.map((item)=>{
+                  return(
+                    <SwotAnalysis
+                      swotData = {item}
+                    />
+                  )
+                })
+              }
+              </Stack>
+           </CardContent>
             </Card>
+             
             </Grid>
             <Grid item>
-            <Card sx={{padding: "10px"}}>
-              <CardContent >
-              <Grid container  spacing={12} sx={{display:"flex",justifyContent: "space-between"}}>
-                <Grid item  xs={4} md={2}>
-                <Stack direction="column" spacing={1}>
-                <Typography variant='h6'>
-                     Finstar
-                </Typography>
-                 <Rating name="read-only" value={value} readOnly />
-                 <Typography variant="subtitle2">
-                     <span style={{fontWeight: "700"}}>3.8 </span><span style={{fontWeight: "200"}}>(90)</span>
-                </Typography>
-                </Stack>
-                </Grid>
-                <Grid item xs={4} md={8} >
-                  <Grid item  sx={{marginBottom: "10px"}}>
-                  <Stack direction="row" spacing={2}>
-                  <Box component="section" sx={{ p: 1, border: '1px solid #D9D9D9', borderRadius: "5px",display:"flex" }} >
-                  <div style={{position: "relative", top: -25, right: 0}}>
-                    <Chip label="Stable" color='success' sx={{borderRadius: "4px", color: "#fff"}}/>
-                  </div>
-                    <Stack sx={{display: "flex",alignItems: "center", justifyContent: "space-between"}} direction="row" spacing={4}>
-                    <Typography variant="subtitle2" display="block">
-                        Ownership
-                    </Typography>
-                     <Box sx={{display: "flex",alignItems: "center"}}>
-                      <Rating name="read-only"  size="small" value={1} readOnly max={1}/><span style={{fontWeight: "400", fontSize: "14px"}}>3.8 </span><span style={{fontWeight: "200",fontSize: "14px"}}>(90)</span>
-                    </Box>
-                    </Stack>
-                  </Box>
-                  <Box component="section" sx={{ p: 1, border: '1px solid #D9D9D9', borderRadius: "5px",display:"flex" }} >
-                  <div style={{position: "relative", top: -25, right: 0}}>
-                    <Chip label="Stable" color='success' sx={{borderRadius: "4px", color: "#fff"}}/>
-                  </div>
-                    <Stack sx={{display: "flex",alignItems: "center", justifyContent: "space-between"}} direction="row" spacing={4}>
-                    <Typography variant="subtitle2" display="block">
-                        Ownership
-                    </Typography>
-                     <Box sx={{display: "flex",alignItems: "center"}}>
-                      <Rating name="read-only"  size="small" value={1} readOnly max={1}/><span style={{fontWeight: "400", fontSize: "14px"}}>3.8 </span><span style={{fontWeight: "200",fontSize: "14px"}}>(90)</span>
-                    </Box>
-                    </Stack>
-                  </Box>
-                  </Stack>
-                  </Grid>
-                  <Grid item>
-                  <Stack direction="row" spacing={2}>
-                  <Box component="section" sx={{ p: 1, border: '1px solid #D9D9D9', borderRadius: "5px",display:"flex" }} >
-                  <div style={{position: "relative", top: -25, right: 0}}>
-                    <Chip label="Stable" color='success' sx={{borderRadius: "4px", color: "#fff"}}/>
-                  </div>
-                    <Stack sx={{display: "flex",alignItems: "center", justifyContent: "space-between"}} direction="row" spacing={4}>
-                    <Typography variant="subtitle2" display="block">
-                        Ownership
-                    </Typography>
-                     <Box sx={{display: "flex",alignItems: "center"}}>
-                      <Rating name="read-only"  size="small" value={1} readOnly max={1}/><span style={{fontWeight: "400", fontSize: "14px"}}>3.8 </span><span style={{fontWeight: "200",fontSize: "14px"}}>(90)</span>
-                    </Box>
-                    </Stack>
-                  </Box>
-                  <Box component="section" sx={{ p: 1, border: '1px solid #D9D9D9', borderRadius: "5px",display:"flex" }} >
-                  <div style={{position: "relative", top: -25, right: 0}}>
-                    <Chip label="Stable" color='success' sx={{borderRadius: "4px", color: "#fff"}}/>
-                  </div>
-                    <Stack sx={{display: "flex",alignItems: "center", justifyContent: "space-between"}} direction="row" spacing={4}>
-                    <Typography variant="subtitle2" display="block">
-                        Ownership
-                    </Typography>
-                     <Box sx={{display: "flex",alignItems: "center"}}>
-                      <Rating name="read-only"  size="small" value={1} readOnly max={1}/><span style={{fontWeight: "400", fontSize: "14px"}}>3.8 </span><span style={{fontWeight: "200",fontSize: "14px"}}>(90)</span>
-                    </Box>
-                    </Stack>
-                  </Box>
-                  </Stack>
-                  </Grid>
-                  </Grid>
-                </Grid>
-                </CardContent>
-            </Card>
+                {
+                  RatingDataItems.map((item)=>{
+                    return(
+                      <RatingCard 
+                      ratingData= {item}
+                      />
+                    )
+                  })
+                }
             </Grid>
         </Grid>
         <Grid item xs={6} md={4}>
