@@ -22,7 +22,7 @@ import TableCell, { tableCellClasses } from '@mui/material/TableCell';
 import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
-import Paper from '@mui/material/Paper';
+
 import Icon1 from "../assets/Group_3.png";
 import Icon2 from "../assets/Group 33 (4).png";
 import Icon3 from "../assets/Group 33 (5).png";
@@ -161,7 +161,7 @@ const defaultTheme = createTheme(
             flexDirection: "row",
             justifyContent: 'space-between'
         }}>
-        <Image src={Logo} width={100} height={50} fit='contain'/>
+        <Image src={Logo} width={100} height={50} fit='contain' alt="Kanini"/>
         <Button  variant="contained" startIcon={<LockIcon/> } sx={{borderRadius: 50}}>Log Out</Button>
         </Toolbar>
       </AppBar>
@@ -259,7 +259,9 @@ const defaultTheme = createTheme(
             </Grid>
         </Grid>
         <Grid item xs={6} md={4}>
-        <TableContainer component={Paper}>
+          <Card>
+            <CardContent>
+            <TableContainer>
       <Table sx={{ minWidth: 350 }} aria-label="customized table">
         <TableHead>
           <TableRow>
@@ -276,6 +278,9 @@ const defaultTheme = createTheme(
         </TableBody>
       </Table>
     </TableContainer>
+            </CardContent>
+          </Card>
+        
         </Grid>
         </Grid>
     </ThemeProvider>

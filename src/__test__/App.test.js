@@ -6,13 +6,17 @@ import App from '../App';
 
 describe("appComponent", () => {
     describe('boundary', () => {
-        test("AppComponent boundary renders Homepage component for / route", () => {
+        test("AppComponent boundary renders Login component for / route", () => {
             render(
                 <Router initialEntries={['/']}>
                     <App />
                 </Router>
             );
-            expect(screen.getByText('Homepage')).toBeInTheDocument();
+            expect(screen.getByText('Email ID')).toBeInTheDocument();
+            expect(screen.getByText('Password')).toBeInTheDocument();
+            expect(screen.getByText('SIGN IN')).toBeInTheDocument();
+            expect(screen.getByAltText('Kanini')).toBeInTheDocument();
+           
         });
 
         test("AppComponent boundary renders Login component for /login route", () => {
@@ -21,34 +25,31 @@ describe("appComponent", () => {
                     <App />
                 </Router>
             );
-            expect(screen.getByText('Login')).toBeInTheDocument();
+            expect(screen.getByText('Email ID')).toBeInTheDocument();
+            expect(screen.getByText('Password')).toBeInTheDocument();
+            expect(screen.getByText('SIGN IN')).toBeInTheDocument();
+            expect(screen.getByAltText('Kanini')).toBeInTheDocument();
         });
 
-        test("AppComponent boundary renders review component for /review route", () => {
+        test("AppComponent boundary renders search component for /search route",  () => {
             render(
-                <Router initialEntries={['/review']}>
+                <Router initialEntries={['/search']}>
                     <App />
                 </Router>
             );
-            expect(screen.getByText('Reviews')).toBeInTheDocument();
+            expect(screen.getByAltText('Kanini')).toBeInTheDocument();
+            
+            // expect(await screen.findByRole("button", { name: "Log Out" })).toBeInTheDocument();
+
         });
 
-        test("AppComponent boundary renders Destination component for /destination route", () => {
+        test("AppComponent boundary renders Destination component for /dashboard route", () => {
             render(
-                <Router initialEntries={['/destination']}>
+                <Router initialEntries={['/dashboard']}>
                     <App />
                 </Router>
             );
-            expect(screen.getByText('Destination')).toBeInTheDocument();
-        });
-
-        test("AppComponent boundary renders Trip Plans component for /trips route", () => {
-            render(
-                <Router initialEntries={['/trips']}>
-                    <App />
-                </Router>
-            );
-            expect(screen.getByText('Trip Plans')).toBeInTheDocument();
+            expect(screen.getByAltText('Kanini')).toBeInTheDocument();
         });
     });
 });

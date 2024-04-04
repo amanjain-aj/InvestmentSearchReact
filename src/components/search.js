@@ -165,8 +165,8 @@ const top100Films = [
             flexDirection: "row",
             justifyContent: 'space-between'
         }}>
-        <Image src={Logo} width={100} height={50} fit='contain'/>
-        <Button  variant="contained" startIcon={<LockIcon/> } sx={{borderRadius: 50}}>Log Out</Button>
+        <Image src={Logo} width={100} height={50} fit='contain' alt='Kanini'/>
+        <Button  variant="contained" startIcon={<LockIcon/> } sx={{borderRadius: 50}} >LogOut</Button>
         </Toolbar>
       </AppBar>
     </Box>

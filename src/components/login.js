@@ -7,7 +7,6 @@ import TextField from '@mui/material/TextField';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import Checkbox from '@mui/material/Checkbox';
 import Link from '@mui/material/Link';
-import Paper from '@mui/material/Paper';
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
@@ -123,7 +122,7 @@ export default function SignInSide() {
               
             }}
           >
-        <Image src={checkIcon} width={30} height={30}/>
+        <Image src={checkIcon} width={30} height={30} alt='Kanini'/>
         <Typography component='h1' variant='h5' marginTop={2}>
         Experience Seamless Stock Search Here
         </Typography>
@@ -132,7 +131,7 @@ export default function SignInSide() {
         </Typography>
         </Box>
         </Grid>
-        <Grid item xs={12} sm={8} md={5} component={Paper}>
+        <Grid item xs={12} sm={8} md={5}>
           <Box
             sx={{
               my: 14,
@@ -141,7 +140,7 @@ export default function SignInSide() {
               flexDirection: 'column',
             }}
           >
-            <Image src={logo} width={150} height={100} fit='contain'/>
+            <Image src={logo} width={150} height={100} fit='contain' />
             <Typography component="h1" variant="h5" align='left'>
               Sign In
             </Typography>
@@ -151,8 +150,8 @@ export default function SignInSide() {
             <Box sx={{ mt: 1 }}>
             <FormTextInput
               type="email"
-              label='Email Id'
-              placeholder='Email Id'
+              label='Email ID'
+              placeholder='Email ID'
               Value={userEmail.value}
               onChangeText={handleChangeEmail}
               Validate={true}
@@ -207,7 +206,7 @@ export default function SignInSide() {
                 disabled= {disable}
                 onClick={handleSubmit}
               >
-              Sign In
+              SIGN IN
               </Button>
               {errorMessage && <h6 style={{ color: "red" }}>{errorMessage}</h6>}
             </Box>
